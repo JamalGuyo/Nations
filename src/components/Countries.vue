@@ -7,7 +7,19 @@
       </div>
       <p></p>
     </div>
-    <div v-else-if="loading === false && countries" class="countries">
+    <div v-else-if="loading === false && filteredCountries" class="countries">
+      <div class="ui">
+        <form class="ui form">
+          <div class="item">
+            <input
+              type="text"
+              placeholder="search country..."
+              @input="handleSearch"
+              v-model="inputSearch"
+            />
+          </div>
+        </form>
+      </div>
       <div class="link">
         <div class="ui breadcrumb">
           <a class="section">Home</a>
@@ -16,11 +28,15 @@
         </div>
 
         <div class="summary">
-          <p>Total : {{ countries.length }}</p>
+          <p>Total : {{ filteredCountries.length }}</p>
         </div>
       </div>
       <div class="c-grid">
-        <div class="ui card" v-for="(country, index) in countries" :key="index">
+        <div
+          class="ui card"
+          v-for="(country, index) in filteredCountries"
+          :key="index"
+        >
           <!--  -->
           <div class="image">
             <img :src="country.flag" />
@@ -56,7 +72,9 @@ export default {
   data() {
     return {
       countries: [],
+      filteredCountries: [],
       loading: false,
+      inputSearch: '',
     };
   },
   created() {
@@ -73,11 +91,18 @@ export default {
         .then((res) => {
           // axios will get data from url then return data
           this.countries = res.data; // takes data from api and fills it in countries[]
+          this.filteredCountries = this.countries;
         })
         .catch((error) => console.log(error))
         .finally(() => (this.loading = false));
     },
+    handleSearch(e) {
+      this.filteredCountries = this.countries.filter((country) =>
+        new RegExp(e.target.value, 'i').exec(country.name)
+      );
+    },
   },
+  computed: {},
 };
 </script>
 

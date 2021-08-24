@@ -5,11 +5,7 @@
         Location App
       </h1>
     </div>
-    <div class="item">
-      <div class="ui input">
-        <input type="text" placeholder="Search a country..." />
-      </div>
-    </div>
+
     <div class="item">
       <router-link class="item" to="/countries">
         Countries <i class="far fa-flag"></i>
