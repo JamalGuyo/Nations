@@ -11,8 +11,12 @@
       </div>
     </div>
     <div class="item">
-      <a class="item"> Countries <i class="far fa-flag"></i> </a>
-      <a class="item"> Regions <i class="fas fa-globe-africa"></i> </a>
+      <router-link class="item" to="/countries">
+        Countries <i class="far fa-flag"></i>
+      </router-link>
+      <router-link class="item" to="/regions">
+        Regions <i class="fas fa-globe-africa"></i>
+      </router-link>
     </div>
   </div>
 </template>

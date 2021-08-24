@@ -99,20 +99,51 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'CountryDetail',
-  props: {
-    country: {
-      type: Object,
-    },
-    loading: {
-      type: Boolean,
+  data() {
+    return {
+      loading: false,
+      country: [],
+      countryName: '',
+    };
+  },
+  created() {
+    this.countryName = this.$route.params.name;
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      //
+      this.loading = true;
+      // method to fetch countries
+      let url = `https://restcountries.eu/rest/v2/name/${this.countryName}`; // define url
+
+      axios
+        .get(url)
+        .then((res) => {
+          // axios will get data from url then return data
+          this.country = res.data[0]; // takes data from api and fills it in countries[]
+          console.log(this.country);
+        })
+        .catch((error) => console.log(error))
+        .finally(() => (this.loading = false));
     },
   },
 };
 </script>
 
 <style>
+.ui.card .avatar img,
+.ui.card img.avatar,
+.ui.cards > .card .avatar img,
+.ui.cards > .card img.avatar {
+  width: 2em !important;
+  height: 2em !important;
+  border-radius: 500rem;
+}
 .ui.active.dimmer {
   height: 90vh !important;
 }
