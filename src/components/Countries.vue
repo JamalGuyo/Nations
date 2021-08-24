@@ -3,7 +3,7 @@
     <!-- ON LOAD -->
     <div v-if="loading" class="ui segment">
       <div class="ui active dimmer">
-        <div class="ui indeterminate text loader">Preparing Files</div>
+        <div class="ui indeterminate text loader">Preparing The Nations</div>
       </div>
       <p></p>
     </div>
