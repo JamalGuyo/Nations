@@ -28,6 +28,15 @@ const routes = [
     name: 'regions',
     component: () => import('../components/Regions.vue'),
   },
+  {
+    path: '/phonevalidation',
+    name: 'phoneValidation',
+    component: () => import('../components/PhoneValidation.vue'),
+  },
+  {
+    path: '*',
+    redirect: '/',
+  },
 ];
 
 const router = new VueRouter({

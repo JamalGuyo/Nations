@@ -70,42 +70,21 @@
           </p>
         </div>
       </div>
-      <div class="content">
-        <div class="ui sub header">
-          <div class="floated right">
-            Validate Phone Number
-            <img class="ui avatar img" :src="country.flag" />
-          </div>
-        </div>
-        <div class="ui small feed">
-          <form class="ui form">
-            <div class="field">
-              <input
-                type="number"
-                :placeholder="country.callingCodes + '...'"
-                v-model="inputValue"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              class="ui mini basic button green"
-              @click="validateNumber"
-            >
-              validate
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+// phone number validation library
+import VuePhoneNumberInput from 'vue-phone-number-input';
+import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
 export default {
   name: 'CountryDetail',
+  components: {
+    VuePhoneNumberInput,
+  },
   data() {
     return {
       loading: false,

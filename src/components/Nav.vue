@@ -13,6 +13,9 @@
       <router-link class="item" to="/regions">
         Regions <i class="fas fa-globe-africa"></i>
       </router-link>
+      <router-link class="item" to="/phonevalidation">
+        Phone Validation <i class="fas fa-phone"></i
+      ></router-link>
     </div>
   </div>
 </template>
