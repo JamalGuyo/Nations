@@ -62,6 +62,30 @@
           </p>
         </div>
       </div>
+      <div class="content">
+        <div class="ui sub header">
+          <div class="floated right">
+            Validate Phone Number
+            <img class="ui avatar img" :src="country.flag" />
+          </div>
+        </div>
+        <div class="ui small feed">
+          <form class="ui form">
+            <div class="field">
+              <input
+                type="number"
+                :placeholder="country.callingCodes + '...'"
+                max="10"
+                min="10"
+                required
+              />
+            </div>
+            <button type="submit" class="ui mini basic button green">
+              validate
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -83,5 +107,11 @@ export default {
 }
 .header img {
   width: 200px;
+}
+.form {
+  align-items: center;
+}
+button {
+  margin: 0 1rem !important;
 }
 </style>

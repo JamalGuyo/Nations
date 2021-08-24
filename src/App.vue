@@ -3,7 +3,7 @@
     <Nav />
     <div class="content-wrapper">
       <!-- <Countries :countries="countries" /> -->
-      <Country :country="countries[15]" />
+      <Country :country="countries[180]" />
     </div>
   </div>
 </template>
