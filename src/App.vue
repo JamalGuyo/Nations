@@ -2,20 +2,23 @@
   <div id="app">
     <Nav />
     <div class="content-wrapper">
-      <Countries :countries="countries" />
+      <!-- <Countries :countries="countries" /> -->
+      <Country :country="countries[15]" />
     </div>
   </div>
 </template>
 
 <script>
 import Nav from './components/Nav';
-import Countries from './components/Countries';
+// import Countries from './components/Countries';
+import Country from './components/CountryDetail';
 
 export default {
   name: 'App',
   components: {
     Nav,
-    Countries,
+    // Countries,
+    Country,
   },
   data() {
     return {
