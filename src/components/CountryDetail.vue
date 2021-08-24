@@ -83,12 +83,15 @@
               <input
                 type="number"
                 :placeholder="country.callingCodes + '...'"
-                max="10"
-                min="10"
+                v-model="inputValue"
                 required
               />
             </div>
-            <button type="submit" class="ui mini basic button green">
+            <button
+              type="submit"
+              class="ui mini basic button green"
+              @click="validateNumber"
+            >
               validate
             </button>
           </form>
@@ -108,6 +111,7 @@ export default {
       loading: false,
       country: [],
       countryName: '',
+      inputValue: '',
     };
   },
   created() {
@@ -126,10 +130,16 @@ export default {
         .then((res) => {
           // axios will get data from url then return data
           this.country = res.data[0]; // takes data from api and fills it in countries[]
-          console.log(this.country);
         })
         .catch((error) => console.log(error))
         .finally(() => (this.loading = false));
+    },
+    validateNumber() {
+      let countryCode = this.country.callingCodes;
+      let validation = /^(?:254|\+254|0)?(7(?:(?:[129][0–9])|(?:0[0–8])|(4[0–1]))[0–9]{6})$/.test(
+        this.inputValue
+      );
+      console.log(validation);
     },
   },
 };
