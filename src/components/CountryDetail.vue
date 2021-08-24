@@ -1,6 +1,14 @@
 <template>
   <div class="country-detail">
-    <div class="ui card">
+    <!-- ON LOAD -->
+    <div v-if="loading" class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui indeterminate text loader">Preparing Files</div>
+      </div>
+      <p></p>
+    </div>
+    <!-- COUNTRY DATA -->
+    <div v-else-if="loading === false && country" class="ui card">
       <div class="content">
         <h1 class="left floated ">{{ country.name }}</h1>
         <div class="right floated meta">
@@ -97,11 +105,17 @@ export default {
     country: {
       type: Object,
     },
+    loading: {
+      type: Boolean,
+    },
   },
 };
 </script>
 
 <style>
+.ui.active.dimmer {
+  height: 90vh !important;
+}
 .ui.card {
   width: 100%;
 }
