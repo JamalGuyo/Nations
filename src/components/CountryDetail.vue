@@ -76,15 +76,9 @@
 
 <script>
 import axios from 'axios';
-// phone number validation library
-import VuePhoneNumberInput from 'vue-phone-number-input';
-import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
 export default {
   name: 'CountryDetail',
-  components: {
-    VuePhoneNumberInput,
-  },
   data() {
     return {
       loading: false,
