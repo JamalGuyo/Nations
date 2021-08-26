@@ -195,7 +195,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .ui.active.dimmer {
   height: 90vh !important;
 }

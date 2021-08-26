@@ -117,7 +117,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .ui.card .avatar img,
 .ui.card img.avatar,
 .ui.cards > .card .avatar img,
