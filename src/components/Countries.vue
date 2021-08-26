@@ -44,9 +44,9 @@
           <div class="content">
             <a class="header">{{ country.name }}</a>
             <div class="meta">
-              <span class="date">Capital City: {{ country.capital }}</span>
-              <span class="date">Region: {{ country.region }}</span>
-              <span class="date">Timezone: {{ country.timezones }}</span>
+              <span>Capital City: {{ country.capital }}</span>
+              <span>Region: {{ country.region }}</span>
+              <span>Timezone: {{ country.timezones }}</span>
             </div>
           </div>
           <div class="extra content">
@@ -117,6 +117,9 @@ export default {
 }
 .ui.card {
   height: 21rem !important;
+}
+.meta span {
+  color: rgba(0, 0, 0, 0.4) !important;
 }
 .image {
   max-height: 10rem !important;
