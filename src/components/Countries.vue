@@ -152,4 +152,15 @@ img {
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (max-width: 1200px) {
+  .c-grid {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ui.card {
+    margin-right: 10px !important;
+  }
+}
 </style>

@@ -35,4 +35,28 @@ a.item {
   display: flex !important;
   justify-content: space-between;
 }
+router-link:hover {
+  color: rgba(0, 0, 255, 0.2) !important;
+}
+@media screen and (max-width: 1200px) {
+  .menu {
+    position: relative !important;
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+  }
+  .item {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+  }
+  .item:before {
+    background: none !important;
+  }
+  .item i {
+    margin: 0 5px;
+  }
+}
 </style>
