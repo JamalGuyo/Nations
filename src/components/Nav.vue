@@ -2,7 +2,7 @@
   <div class="ui left fixed vertical menu">
     <div class="item">
       <h1>
-        Location App
+        Nations App
       </h1>
     </div>
 
@@ -38,6 +38,12 @@ a.item {
 router-link:hover {
   color: rgba(0, 0, 255, 0.2) !important;
 }
+/*  */
+a.item.router-link-exact-active.router-link-active {
+  color: #4183c4 !important;
+  cursor: pointer !important;
+}
+/*  */
 @media screen and (max-width: 1200px) {
   .menu {
     position: relative !important;
