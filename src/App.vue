@@ -42,4 +42,10 @@ export default {
     margin-left: 0px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .content-wrapper {
+    padding: 10px 5px !important;
+  }
+}
 </style>
