@@ -185,15 +185,17 @@ img {
 .sort-btn {
   cursor: pointer;
   box-shadow: 1px 0 3px gray;
-  padding: 12px 18px;
+  padding: 10px 5px;
+  border-radius: 5px;
   background: white;
+  color: gray;
   margin: 5px;
   transition: 0.5s;
 }
 .sort-btn:hover {
   box-shadow: none;
-  background: rgba(0, 0, 0, 0.3);
-  color: black;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 1200px) {
