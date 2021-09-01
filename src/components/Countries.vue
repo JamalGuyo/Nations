@@ -18,6 +18,21 @@
               v-model="inputSearch"
             />
           </div>
+          <div class="item sort">
+            <p>
+              Sort By Population:
+            </p>
+            <p>
+              <a class="sort-btn" @click="sortByHighest"
+                ><i class="fas fa-sort-numeric-down-alt"></i> Highest to
+                lowest</a
+              >
+
+              <a class="sort-btn" @click="sortByLowest"
+                ><i class="fas fa-sort-numeric-down"></i> Lowest to highest</a
+              >
+            </p>
+          </div>
         </form>
       </div>
       <div class="link">
@@ -101,6 +116,17 @@ export default {
         new RegExp(e.target.value, 'i').exec(country.name)
       );
     },
+    sortByHighest() {
+      //
+      this.filteredCountries = this.filteredCountries
+        .slice(0)
+        .sort((a, b) => b.population - a.population);
+    },
+    sortByLowest() {
+      this.filteredCountries = this.filteredCountries
+        .slice(0)
+        .sort((a, b) => a.population - b.population);
+    },
   },
   computed: {},
 };
@@ -151,6 +177,23 @@ img {
 .meta {
   display: flex;
   flex-direction: column;
+}
+.sort {
+  display: flex;
+  padding: 20px 0;
+}
+.sort-btn {
+  cursor: pointer;
+  box-shadow: 1px 0 3px gray;
+  padding: 12px 18px;
+  background: white;
+  margin: 5px;
+  transition: 0.5s;
+}
+.sort-btn:hover {
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.3);
+  color: black;
 }
 
 @media screen and (max-width: 1200px) {
